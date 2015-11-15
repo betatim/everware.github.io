@@ -37,7 +37,7 @@
 <div id="login-main">
 <header class="jumbotron masthead">
     <h1>everware</h1>
-    <p>Sharing is caring</p>
+    <p>LHCb computing workshop</p>
 </header>
 
 <div class="container">
@@ -46,25 +46,139 @@
       <h1>Welcome</h1>
       <p>
         <a href="https://github.com/everware">Everware</a> is a
-        project that allows you to edit and run someone else's code with one
-        click, even if that code has complicated setup instructions. The primary
-        aim of the project is to encourage reuse of software between
-        researchers.
+        project that allows you to edit and run someone else's code
+        with one click, even if that code has complicated setup
+        instructions. The main aim of the project is to encourage
+        reuse of software between researchers by making it easy and
+        risk free to try out someone else's code.
       </p>
     </div>
 
     <div class="col-sm-6" style="float:none; margin:0 auto">
-      <h3>Code</h3>
+      <h3>Reusable data analysis</h3>
       <p>
-        The <a href="https://github.com/everware">code</a> for
-        everware lives on <a href="https://github.com/">github</a>.
-        Try it out on your laptop or setup your own public everware
-        instance.
+        Everware focuses on the data analysis part of scientific
+        computing. Reusing and reproducing that should be as easy as
+        pasting the URL of a code repository into a webpage. 
       </p>
+      <p>
+        Everware provides the infrastructure to make this a
+        reality. Once you paste the URL of a git repository everware
+        will then launch a
+        custom <a href="https://www.docker.com/what-docker">docker
+        container</a> in which the code runs and connects you to it in
+        your browser. This makes it super easy for you to try out
+        someone else's code, modify it and take the parts that
+        interest you and reuse them. It also means that reproducing
+        and preserving an analysis comes for free.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Portable data analysis</h3>
+      <p>
+        Everware uses docker containers. Containers are lightweight
+        virtual machines. They bring all the benefits of portability,
+        isolation and control of a virtual machine without the
+        resource hungriness and sluggishness.
+      </p>
+      <p>
+        Containers have little overhead, start in a fraction of a
+        second and run on Linux, Mac and Windows. You can seemlessly
+        transfer your analysis from your laptop, to your institute's
+        cluster, to the cloud, or someone else's cluster.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Isolated data analysis</h3>
+      <p>
+        By running your data analysis in a isolated container you have
+        full control over the installed software. This means you can
+        pick exactly the versions you need for this project. You will
+        not be surprised after a holiday that nothing works anymore,
+        because someone somewhere changed something.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Requirements</h3>
+      <p>
+        What is needed for this magic to work? The only requirement is
+        that the repository you want to try out contains
+        a <code>Dockerfile</code> describing how to setup the
+        environment for the analysis. Preferably it should also
+        contain an executable <code>README</code> (for example
+        a <a href="https://jupyter.org">jupyter notebook</a>)
+        describing how to run each step of the analysis.
+      </p>
+      <p>
+        The simplest <code>Dockerfile</code> would contain just one
+        line: <code>FROM lhcb/analysis:versionX</code>. This covers
+        the large fraction of cases where the default set of LHCb
+        analysis libraries is all you need. If you need a few extra
+        libraries or tools you can add them on top of the basic
+        image. Power users can roll their own <code>Dockerfile</code>
+        from scratch.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>User stories</h3>
+      <p>
+        We are building everware because it fixes
+        several painful things we encounter most days as experimental
+        physicists. Here is a list of some of them.
+      </p>
+
+      <h4>The convenience</h4>
+      <p>You can use the environment provided by
+        your <code>Dockerfile</code> while developing your analysis in
+        the first place. The container will run locally, you can use
+        your favourite editor, mount your large input files directly
+        into the container, etc. You can use what ever libraries and
+        versions of them that you like, not your local admin. When you
+        are done with your analysis you get reproducibility for free.
+      </p>
+      <h4>The holiday</h4>
+      <p>Sometimes libraries and software get updated while you are on holiday.
+        Nothing spoils your holiday faster than returning to "nothing works
+        anymore ... ahhrgg ... why!!! It was working before I left!!"</p>
+      <h4>The new guy</h4>
+      <p>How many hours have you spent trying to figure out why that new
+        student or postdoc can not run your code? In the end it is always some
+        weird environment variable or something hidden at the bottom of your
+        <code>.bashrc</code> (or worse, theirs).</p>
+      <h4>The coding ninja student</h4>
+      <p>If you get others to use everware it has the side effect that
+        you make it much easier for yourself to take the code from
+        that coding-ninja-student who made that amazing Figure 3 in
+        your paper and use it yourself. You even have a chance to
+        understand what you need to install in order run it in your
+        own analysis (<code>Dockerfile</code> syntax is like a shared
+        language, unlike the l33t speak of the coding-ninja-student).</p>
+      <h4>The helper</h4>
+      <p>Often when people need help they will send you some weird
+        script, that depends on
+        libraries <code>X</code>, <code>Y</code>
+        and <code>Z</code>. In some weird combination of versions. You
+        look at it and think 'yeah right ... this is gonna take a
+        while.', getting things setup to help you will take some
+        time. Therefore you will ask for a lot of your favourite
+        dirnks in exchange for helping them with your
+        problem. However, if you could run it in your browser at a
+        click of a button ... one coffee will suffice (and you will
+        look at it now, not maybe later).</p>
     </div>
 
     <div class="col-sm-6" style="float:none; margin:0 auto">
       <h3>Tech</h3>
+      <p>
+        The <a href="https://github.com/everware">code</a> for
+        everware lives on <a href="https://github.com/">github</a>.
+        Try it out on your laptop or setup your a public everware
+        instance.
+      </p>
       <p>
         Everware is written
         in <a href="https://www.python.org/">python</a>. We
@@ -86,8 +200,13 @@
   </div>
 </div>
 
+<footer class="footer">
+  <div class="container">
+    
+  </div>
+</footer>
+
 </div>
 
 </body>
-
 </html>
