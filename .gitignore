@@ -1,0 +1,6 @@
+node_modules
+*.py[co]
+*~
+.DS_Store
+build
+dist

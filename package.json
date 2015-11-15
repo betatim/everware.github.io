@@ -1,0 +1,16 @@
+{
+ "name": "everwarewebpage-deps",
+ "version": "0.0.0",
+ "description": "Everware webpage nodejs dependencies",
+ "author": "Everware developers",
+ "license": "BSD",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/everware/everware.github.io.git"
+ },
+ "devDependencies": {
+  "bower": "*",
+  "less": "~2",
+  "less-plugin-clean-css": "*"
+ }
+}

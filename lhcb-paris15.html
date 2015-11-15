@@ -1,0 +1,96 @@
+
+
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Everware - sharing is caring</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="/css/style.min.css" type="text/css"/>
+    
+    <script src="/components/requirejs/require.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require.config({
+          
+          paths: {
+            components: '../components',
+            jquery: '../components/jquery/jquery.min',
+            bootstrap: '../components/bootstrap/js/bootstrap.min',
+          },
+          shim: {
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+          }
+      });
+    </script>
+    <script async defer src="//hypothes.is/embed.js"></script>
+</head>
+
+<body>
+
+
+<div id="login-main">
+<header class="jumbotron masthead">
+    <h1>everware</h1>
+    <p>Sharing is caring</p>
+</header>
+
+<div class="container">
+  <div class="row row-centered">
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h1>Welcome</h1>
+      <p>
+        <a href="https://github.com/everware">Everware</a> is a
+        project that allows you to edit and run someone else's code with one
+        click, even if that code has complicated setup instructions. The main
+        aim of the project is to encourage reuse of software between
+        researchers.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Code</h3>
+      <p>
+        The <a href="https://github.com/everware">code</a> for
+        everware lives on <a href="https://github.com/">github</a>.
+        Try it out on your laptop or setup your own public everware
+        instance.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Tech</h3>
+      <p>
+        Everware is written
+        in <a href="https://www.python.org/">python</a>. We
+        use <a href="https://jupyter.org/">jupyter</a>
+        and <a href="https://www.docker.com/">docker</a>.
+      </p>
+    </div>
+
+    <div class="col-sm-6" style="float:none; margin:0 auto">
+      <h3>Public beta</h3>
+      <p>
+        There is
+        a <a href="https://everware.rep.school.yandex.net">public
+        everware instance</a> which is currently in private beta, if
+        you are interested in trying it out:
+        <a href="http://goo.gl/forms/vbZXgYgj3N">sign up here</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+
+</html>
